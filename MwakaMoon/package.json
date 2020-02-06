@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc; node ./build/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "tsc",
+    "start": "node ./build/app.js"
   },
-  "author": "",
+  "author": "Camelia Zarzitski",
   "license": "ISC",
   "dependencies": {
     "@types/errorhandler": "0.0.32",
