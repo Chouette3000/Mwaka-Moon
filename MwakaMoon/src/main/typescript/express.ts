@@ -19,7 +19,8 @@ export class Express {
         this.app = express();
         //configure application
         this.config();
-        this.app.set('port', this.options.port);
+        this.app.set('port', process.env.PORT);
+        //this.app.set('port', this.options.port);
     }
 
     /**

@@ -14,7 +14,8 @@ var Express = /** @class */ (function () {
         this.app = express_1.default();
         //configure application
         this.config();
-        this.app.set('port', this.options.port);
+        this.app.set('port', process.env.PORT);
+        //this.app.set('port', this.options.port);
     }
     /**
      * Configure application
