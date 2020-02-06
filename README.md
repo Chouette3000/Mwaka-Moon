@@ -4,4 +4,4 @@ Pour lancer le projet, lancer les commandes suivantes :
 
 tsc
 node ./build/app.js
-ouvrir le navigateur sur http://localhost:8081/
+ouvrir le navigateur sur http://localhost:8081/home
