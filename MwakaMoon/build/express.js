@@ -4,6 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var express_handlebars_1 = __importDefault(require("express-handlebars"));
+var bodyParser = require("body-parser");
 var errorHandler = require("errorhandler");
 var Express = /** @class */ (function () {
     function Express(options) {
@@ -18,9 +20,18 @@ var Express = /** @class */ (function () {
      * Configure application
      */
     Express.prototype.config = function () {
+        var router = express_1.default.Router();
         this.app
+            .engine('handlebars', express_handlebars_1.default())
+            .set('view engine', 'handlebars')
+            .enable('view cache')
+            .enable('trust proxy')
+            .set('views', __dirname + "/../src/main/views/")
+            .use(bodyParser())
+            .use(router)
             .use(express_1.default.static(this.options.static))
             .get('/', function (req, res) { return res.send('Hello World!'); })
+            .get('/home', function (req, res) { return res.render('home_view'); })
             .use(errorHandler());
     };
     /**

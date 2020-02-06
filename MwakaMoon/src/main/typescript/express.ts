@@ -1,4 +1,6 @@
 import express from 'express';
+import handlebars from 'express-handlebars';
+import bodyParser = require("body-parser");
 import errorHandler = require("errorhandler");
 
 export interface ServerOptions {
@@ -24,9 +26,20 @@ export class Express {
      * Configure application
      */
     public config() {
+		
+		const router = express.Router();
+		
         this.app
+			.engine('handlebars', handlebars())
+			.set('view engine', 'handlebars')
+			.enable('view cache')
+			.enable('trust proxy')
+			.set('views', `${__dirname}/../src/main/views/`)
+			.use(bodyParser())
+			.use(router)
 			.use(express.static(this.options.static))
             .get('/', (req, res) => res.send('Hello World!'))
+            .get('/home', (req, res) => res.render('home_view'))
             .use(errorHandler());
     }
 
