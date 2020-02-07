@@ -13,12 +13,15 @@ var skybox = BABYLON.Mesh.CreateBox("skyBox", 100.0, scene);
 // create material for the skybox
 var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
 skyboxMaterial.backFaceCulling = false;
+skyboxMaterial.disableLighting = true;
 skyboxMaterial.reflectionTexture = new BABYLON.CubeTexture("resources/textures/skybox/skybox", scene);
 skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+skybox.infiniteDistance = true;
 skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
 skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
-
 skybox.material = skyboxMaterial;
+
+
 			
 //
 // Camera
@@ -42,7 +45,8 @@ let sphere = BABYLON.MeshBuilder.CreateSphere( "sphere", {
 }, scene );
 
 let mat =  new BABYLON.StandardMaterial( "mat", scene );
-mat.diffuseColor = new BABYLON.Color3( 0.8, 0, 0 );
+mat.diffuseColor = new BABYLON.Color3( 1, 0, 0 );
+mat.ambientTexture = new BABYLON.Texture("resources/textures/vector-of-basketball-texture.jpg", scene);
 sphere.material = mat;
 
 engine.runRenderLoop( () => {
