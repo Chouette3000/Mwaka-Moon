@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <title>Mwaka-Moon</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 	<!-- Babylon.js -->
 	<script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
@@ -37,6 +39,7 @@
 	</style>
   </head>
   <body>
+  	<canvas id="canvas"></canvas> 
 	<!-- <div id="debut"> -->
 		<!-- <h1> Je suis un ballon oublié sur la Lune, aide-moi à rejoindre la Terre !</h1> -->
 		<!-- <button onclick="showGame()" id="buttonLaunch" class="favorite styled" type="button">Jouer</button> -->
@@ -44,26 +47,10 @@
 	<!-- <div id="playing"> -->
 		<!-- <h1>Score : 10</h1> -->
 	<!-- </div> -->
-	<canvas id="canvas"></canvas> 
+
+	<script src="src/mainScene.js"></script>
+	
     <script src="src/app.js"></script>
-	<script>
-/*var x = document.getElementById("playing");
-x.style.display = "none";
 
-function showGame() {
-	addScript("dist/app.js");
-	var x = document.getElementById("debut");
-	x.style.display = "none";
-	x = document.getElementById("playing");
-	x.style.display = "block";
-}
-
-function addScript(filename) {
-	var fileref = document.createElement('script')
-	fileref.setAttribute("type","text/javascript")
-	fileref.setAttribute("src", filename)
-	document.body.appendChild(fileref);
-}*/
-	</script>
   </body>
 </html>
