@@ -4,7 +4,7 @@ var mainScene = function () {
 	let playerCamera = initPlayerCamera(scene);
 	
 	let univers = initUnivers(scene);
-	let basketball = initBasketball(scene, engine, playerCamera);
+	let basketball = initBasketball(scene, playerCamera);
 	
     return scene;
 

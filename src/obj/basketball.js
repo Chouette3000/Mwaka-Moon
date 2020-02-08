@@ -1,4 +1,4 @@
-var initBasketball = function (scene, engine, playerCamera) {
+var initBasketball = function (scene, playerCamera) {
 	//
 	// Sphere
 	//
@@ -20,7 +20,7 @@ var initBasketball = function (scene, engine, playerCamera) {
 		scene.render();
 		a +=0.010;
 		var sign = Math.cos(a)/Math.abs(Math.cos(a));
-		sphere.position.x += 0.02 * sign;
+		sphere.position.x += 1 * sign;
 	})  
 	
 	return sphere;
