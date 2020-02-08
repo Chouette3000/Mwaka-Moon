@@ -20,5 +20,25 @@ var initUnivers = function (scene) {
 	skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
 	skybox.material = skyboxMaterial;
 	
+	
+	var meshisin = BABYLON.AbstractMesh;
+	var crater;
+	meshisin = BABYLON.SceneLoader.ImportMesh("", "resources/obj/moon/", "scene.gltf", scene, function (newMeshes) {	
+		crater = newMeshes[0];
+		crater.position.y = -5;
+		crater.scaling = new BABYLON.Vector3(300, 300, 300);
+	});
+	
+	/*setTimeout(function() {
+		
+		//let mat =  new BABYLON.StandardMaterial( "mat", scene );
+		//mat.diffuseColor = new BABYLON.Color3( 1, 0, 0 );
+		//mat.ambientTexture = new BABYLON.Texture("resources/textures/vector-of-basketball-texture.jpg", scene);
+		//crater.material = mat;
+		
+		
+		//playerCamera.lockedTarget = crater;
+	}, 2000);*/
+	
 	return skybox;
 }

@@ -2,9 +2,9 @@ var initPlayerCamera = function (scene) {
 	//
 	// Camera
 	//
-	//let camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 4,-2), scene);
+	let camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 4,-2), scene);
 	// Parameters: name, position, scene
-	let camera = new BABYLON.FollowCamera("FollowCam", new BABYLON.Vector3(0, 10, -10), scene);
+	//let camera = new BABYLON.FollowCamera("FollowCam", new BABYLON.Vector3(0, 10, -10), scene);
 
 	// The goal distance of camera from target
 	camera.radius = 30;
