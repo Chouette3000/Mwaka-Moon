@@ -2,7 +2,8 @@ var initPlayerCamera = function (scene) {
 	//
 	// Camera
 	//
-	let camera = new BABYLON.FreeCamera('camera1', new BABYLON.Vector3(0, 4,-2), scene);
+	let camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 8, 50, BABYLON.Vector3.Zero(), scene);
+/* 
 	// Parameters: name, position, scene
 	//let camera = new BABYLON.FollowCamera("FollowCam", new BABYLON.Vector3(0, 10, -10), scene);
 
@@ -20,8 +21,8 @@ var initPlayerCamera = function (scene) {
 
 	// The speed at which acceleration is halted
 	camera.maxCameraSpeed = 10
-
+*/
 	// This attaches the camera to the canvas
-	camera.attachControl(canvas, true);
+	//camera.attachControl(canvas, true);
 	return camera;
 }
