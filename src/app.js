@@ -5,8 +5,11 @@ var engine = null;
 var scene = null;
 var createDefaultEngine = function() { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true }); };
 engine = createDefaultEngine();
+if (!engine) throw 'engine should not be null.';
 scene = startMenuScene();
-//console.log(scene);	
+engine.resize();
+
+console.log(scene);	
 engine.runRenderLoop(function () {
 	if (scene) {
 		scene.render();
@@ -15,7 +18,7 @@ engine.runRenderLoop(function () {
 	
 function launchGame(){
 	var loadingMenu = new LoadingMenu();
-	if (!engine) throw 'engine should not be null.';
+	
 	scene = mainScene();
 }
 
