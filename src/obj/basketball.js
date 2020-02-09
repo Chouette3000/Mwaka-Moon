@@ -34,7 +34,7 @@ var initBasketball = async function (scene, playerCamera) {
 	
 	console.log('ball', ball)
 	var sphere = makeSphere(newMeshes, scene)
-	sphere.position.y += 50
+	sphere.position.y += 150
 	sphere.position.z += 10
 	sphere.physicsImpostor = new BABYLON.PhysicsImpostor(
         sphere,
@@ -72,7 +72,7 @@ var initBasketball = async function (scene, playerCamera) {
         // Le keyCode 32 correspond à la bare espace
         console.log(sphere)
         if(evt.keyCode === 32){
-			sphere.physicsImpostor.restitution = 0
+			//sphere.physicsImpostor.restitution = 0
             //sphere.physicsImpostor.applyImpulse(new BABYLON.Vector3(0, 150, 0), sphere.getAbsolutePosition());
 			console.log('Jumped!',sphere.physicsImpostor.restitution )
 			
