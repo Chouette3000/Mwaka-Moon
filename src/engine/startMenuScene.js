@@ -1,4 +1,4 @@
-var mainScene = function () {
+var startMenuScene = function () {
 	let scene = new BABYLON.Scene( engine );
 
 	let playerCamera = initPlayerCamera(scene);
