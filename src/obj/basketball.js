@@ -14,13 +14,22 @@ var initBasketball = function (scene, playerCamera) {
 	*/
 	
 	var meshisin = BABYLON.AbstractMesh;
-	var ball;
+	var ball; 
 	meshisin = BABYLON.SceneLoader.ImportMesh("", "resources/obj/ball/", "scene.gltf", scene, function (newMeshes) {	
 		ball = newMeshes[0];
 		ball.position.y += 10;
-
-
-		//playerCamera.lockedTarget = skullMesh;
+		var a = 0;
+		console.log(ball.position.x);
+		engine.runRenderLoop( () => {
+			scene.render();
+			a +=0.010;
+			var sign = Math.cos(a)/Math.abs(Math.cos(a));
+			ball.position.x += 1 * sign;
+			ball.position.y += 1 * sign;
+			console.log(ball.position.x);
+			console.log(ball.position.y);
+		})  
+		playerCamera.lockedTarget = ball;
 	});
 	
 	
