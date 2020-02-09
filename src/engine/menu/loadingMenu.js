@@ -12,6 +12,7 @@ class LoadingMenu {
   hide(){
     $("#loadingMenu").hide();
     $("#canvas").show();
+    engine.resize();
   }
 
 }
