@@ -28,7 +28,7 @@ var initBasketball = async function (scene, playerCamera) {
 	sphere.physicsImpostor = new BABYLON.PhysicsImpostor(
         sphere,
         BABYLON.PhysicsImpostor.SphereImpostor,
-        { mass: 8, restitution: 0.6  },
+        { mass: 8, restitution: 0.8  },
         scene
     );
 	playerCamera.lockedTarget = sphere;

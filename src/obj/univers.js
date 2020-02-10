@@ -81,14 +81,14 @@ var initUnivers = async function (scene) {
 
 
 
-  var ground = await BABYLON.Mesh.CreateGroundFromHeightMap("ground", "http://localhost/gow-Lion3000/resources/obj/moon/textures/Material_27_baseColor.png", 500, 500, 200, 0, 50, scene, false);
+  var ground = await BABYLON.Mesh.CreateGroundFromHeightMap("ground", "resources/obj/moon/textures/Material_27_baseColor.png", 500, 500, 200, 0, 50, scene, false);
 
   //ar newMeshes = (await BABYLON.SceneLoader.ImportMeshAsync("", "resources/obj/moon/", "scene.gltf", scene)).meshes;
 
-  await setTimeout(function() {
+  setTimeout(function() {
     var ground2 = ground.clone();
     ground2.material = new BABYLON.StandardMaterial("wire", scene);
-    ground2.material.diffuseColor = BABYLON.Color3.Black();
+    ground2.material.diffuseColor = BABYLON.Color3.White();
     ground2.material.wireframe = true;
 
     ground.physicsImpostor = new BABYLON.PhysicsImpostor(ground, BABYLON.PhysicsImpostor.HeightmapImpostor, { mass: 0, restitution: 0.1 }, scene);
@@ -97,7 +97,7 @@ var initUnivers = async function (scene) {
     ground.material = new BABYLON.StandardMaterial("green", scene);
     ground.material.diffuseColor = BABYLON.Color3.Green();
     ground.material.specularColor = BABYLON.Color3.Black();
-  }, 2000);
+  }, 3000);
 
 
 
