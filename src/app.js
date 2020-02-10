@@ -10,6 +10,9 @@ engine = createDefaultEngine();
 if (!engine) throw 'engine should not be null.';
 
 scene = mainScene();
+scene.executeWhenReady(function() {
+	loadingMenu.hide();
+});
 
 engine.runRenderLoop(function () {
 	if (scene) {
