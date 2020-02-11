@@ -12,6 +12,5 @@ var startMenuScene = function () {
 		ball.position.z = 100;
 		camera.lockedTarget = ball;
 	});
-
 	return scene;
 };
