@@ -10,11 +10,6 @@ scene = startMenuScene();
 engine.resize();
 
 
-/*scene = mainScene();
-scene.executeWhenReady(function() {
-	loadingMenu.hide();
-});
-*/
 engine.runRenderLoop(function () {
 	if (scene) {
 		scene.render();
@@ -25,6 +20,9 @@ function launchGame(){
 	var loadingMenu = new LoadingMenu();
 	
 	scene = mainScene();
+	scene.executeWhenReady(function() {
+		loadingMenu.hide();
+	});
 }
 
 // Resize

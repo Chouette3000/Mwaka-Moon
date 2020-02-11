@@ -69,6 +69,6 @@ var initBasketball = async function (scene, playerCamera) {
             break;
         }
     }, false);
-	console.log('balll ,',ball)
+	console.log('balll ,',ball);
 	return ball;
 }
