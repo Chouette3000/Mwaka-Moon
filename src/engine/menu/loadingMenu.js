@@ -1,7 +1,6 @@
 class LoadingMenu {
   constructor(hauteur, largeur) {
     this.show();
-    setTimeout(this.hide, 3000);
   }
 
   show(){

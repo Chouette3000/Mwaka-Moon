@@ -9,7 +9,12 @@ if (!engine) throw 'engine should not be null.';
 scene = startMenuScene();
 engine.resize();
 
-console.log(scene);	
+
+/*scene = mainScene();
+scene.executeWhenReady(function() {
+	loadingMenu.hide();
+});
+*/
 engine.runRenderLoop(function () {
 	if (scene) {
 		scene.render();
