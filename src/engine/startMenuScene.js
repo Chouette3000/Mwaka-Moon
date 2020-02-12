@@ -1,17 +1,31 @@
 var startMenuScene = function () {
-	let scene = new BABYLON.Scene( engine );
 
-	let camera = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, Math.PI / 8, 50, BABYLON.Vector3.Zero(), scene);
+	// This creates a basic Babylon Scene object (non-mesh)
+	var physEngine = new BABYLON.CannonJSPlugin(false);
+	var scene = new BABYLON.Scene(engine);
+	scene.collisionsEnabled = true;
+	scene.enablePhysics(new BABYLON.Vector3(0, -9.8, 0), physEngine);
+	physEngine.setTimeStep(1/60);
+
+	// Parameters: alpha, beta, radius, target position, scene
+	let camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 50, 1), scene);
+  camera.setPosition(new BABYLON.Vector3(3, 35, 1));
+
 	let univers = new UniversMenu(scene);
 	univers.init();
-	var meshisin = BABYLON.AbstractMesh;
-	var ball;
-	meshisin = BABYLON.SceneLoader.ImportMesh("", "resources/obj/ball/", "scene.gltf", scene, function (newMeshes) {
-		ball = newMeshes[0];
-		ball.position.x = 100;
-		ball.position.y = 100;
-		ball.position.z = 100;
-		camera.lockedTarget = ball;
-	});
+
+
+	testtrucrotation(camera, scene);
+
 	return scene;
 };
+
+var testtrucrotation = async function (camera, scene) {
+	let ball = new Ball(scene, camera);
+	let sphere = await ball.initBasketball();
+
+	var axis = new BABYLON.Vector3(2, 0, 4);
+	scene.registerAfterRender(function () {
+    sphere.rotate(axis, 0.01, BABYLON.Space.WORLD);
+  });
+}

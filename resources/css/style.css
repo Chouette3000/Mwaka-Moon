@@ -1,3 +1,7 @@
+/* ============================================================================
+															General CSS
+   ============================================================================ */
+
 html, body {
 	overflow: hidden;
 	width: 100%;
@@ -6,26 +10,136 @@ html, body {
 	padding: 0;
 }
 
+@font-face {
+	font-family: hemi-head-bd-it;
+	src: url('../fonts/hemi-head-426/hemi-head-bd-it.ttf');
+}
+
 #canvas {
 	width: 100%;
 	height: 100%;
 	touch-action: none;
 }
 
+h1{
+ font-family: hemi-head-bd-it;
+}
+
+/* ============================================================================
+															Start Menu
+   ============================================================================ */
+#startingMenu {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#startingMenu h1{
+	font-size: 7em;
+	color: green;
+	text-shadow: 10px 10px #FFF;
+}
+#startingMenu p, #startingMenu h1{
+	text-align: center;
+}
+#startingMenu button{
+	font-family: hemi-head-bd-it;
+}
+
+#startingMenu .btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+		margin-top: 20%;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+#startingMenu .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#startingMenu .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#startingMenu .btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+#startingMenu .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+#startingMenu .btn-white::after {
+    background-color: #34a853;
+}
+
+#startingMenu .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+#startingMenu .btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 50%;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 250%;
+}*/
+
+/* ============================================================================
+															Loading Menu
+   ============================================================================ */
 #loadingMenu {
-	
 	display: none;
 	margin: auto;
-    width: 100px;
+	width: 100px;
 	position: absolute;
-	
+
 	/* this is for vetical align */
 	top: 50%;
 	left: 50%;
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
-
 #loadingMenu h1{
     color: grey;
     font-weight: bolder;
@@ -33,11 +147,10 @@ html, body {
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	font-size: 250%;
 }
-
 .lds-ripple {
   display: inline-block;
   position: relative;
- 
+
 }
 .lds-ripple div {
   position: absolute;
@@ -64,20 +177,4 @@ html, body {
     height: 200px;
     opacity: 0;
   }
-}
-
-.button {
-	background-color: #4CAF50; /* Green */
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	border-radius: 50%;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	font-size: 250%;
 }
