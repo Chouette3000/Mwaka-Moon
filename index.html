@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Mwaka-Moon</title>
-	
+
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -29,21 +29,24 @@
 		<h1>Alunissage en cours ...</h1>
 		<div class="lds-ripple"><div></div><div></div></div>
 	</div>
-	
+
 	<div id="startingMenu">
 		<h1>Mwaka-Moon : Rejoins la Terre !</h1>
 		<button id="play" class="button">Jouer</button>
 	</div>
-	
+
   	<canvas id="canvas"></canvas>
 
+  	<script src="src/engine/tools.js"></script>
   	<script src="src/engine/menu/loadingMenu.js"></script>
   	<script src="src/engine/menu/startMenu.js"></script>
   	<script src="src/engine/playerCamera.js"></script>
   	<script src="src/obj/univers.js"></script>
   	<script src="src/obj/universWithoutCratere.js"></script>
   	<script src="src/obj/plateforme.js"></script>
-  	<script src="src/obj/basketball.js"></script>
+	<script src="src/obj/basketball.js"></script>
+	<script src="src/obj/Ball.js"></script>
+	<script src="src/control/BallControl.js"></script>
   	<script src="src/engine/mainScene.js"></script>
   	<script src="src/engine/startMenuScene.js"></script>
 
