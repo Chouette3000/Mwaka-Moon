@@ -14,7 +14,6 @@ var makeSphere = (newMeshes, scene, scaling = 1)=>{
 }
 
 var initBasketball = async function (scene, playerCamera) {
-	var meshisin = BABYLON.AbstractMesh;
 	var ball;
 
 	var newMeshes = (await BABYLON.SceneLoader.ImportMeshAsync("", "resources/obj/ball/", "scene.gltf", scene)).meshes;
