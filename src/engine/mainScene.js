@@ -12,7 +12,8 @@ var mainScene = function () {
 	let univers = initUnivers(scene);
 	let playerCamera = initPlayerCamera(scene);
 	let basketball = initBasketball(scene, playerCamera);
-
+	let plateforme1 = getNewPlateforme(scene);
+	plateforme1.position.x = basketball.position.x + 10;
   return scene;
 
 };
