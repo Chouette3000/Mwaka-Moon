@@ -1,32 +1,18 @@
 
-var getNewPlateforme = async function (scene) {
+var getNewPlateforme = function (scene, playerCamera) {
 	
-	// Material
-	var mat = new BABYLON.StandardMaterial("whiteTransparant", scene);
-	mat.diffuseColor = new BABYLON.Color4(0.97, 0.97, 0.99);
-	mat.alpha = 0.2;	// transparence
-	
+	var mat = new BABYLON.StandardMaterial("mat", scene);
+	mat.ambientTexture = new BABYLON.Texture("resources/textures/distortion.png", scene);
+	mat.alpha = 0.6;
+
 	// Plateforme
-	var boxPlateforme = BABYLON.MeshBuilder.CreateBox("box", {height: 1, width: 0.75, depth: 0.25}, scene);
-	boxPlateforme.position.x = -1.5;
+	var boxPlateforme = BABYLON.MeshBuilder.CreateBox("box", { height: 5, width: 45.00, depth: 45.00}, scene);
+	boxPlateforme.position.y = 30;
 	boxPlateforme.material = mat;
-	
+	boxPlateforme.physicsImpostor = new BABYLON.PhysicsImpostor(boxPlateforme, BABYLON.PhysicsImpostor.HeightmapImpostor, { mass: 0, restitution: 0.1 }, scene);
+    boxPlateforme.convertToFlatShadedMesh();
+	playerCamera.lockedTarget = boxPlateforme;
 	return boxPlateforme;
 }
 
-// style dispos : resources/textures/lavatile.jpg  ||  resources/textures/SunDiffuse.png
-var getNewPlateformeWithStyle = async function (scene, style) {
-	
-	// Material
-	var matWithTexture = grass0.diffuseTexture = new BABYLON.Texture(style, scene);
-	mat.diffuseColor = new BABYLON.Color4(0.97, 0.97, 0.99);
-	//mat.alpha = 0.2;	// transparence
-	
-	// Plateforme
-	var boxPlateforme = BABYLON.MeshBuilder.CreateBox("box", {height: 1, width: 0.75, depth: 0.25}, scene);
-	boxPlateforme.position.x = -1.5;
-	boxPlateforme.material = mat;
-	
-	return boxPlateforme;
-}
 	

@@ -4,7 +4,7 @@ class BallControl {
     }
     initControl(){
         const ball = this.ball;
-        ball.physicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, 0, 50));
+        //ball.physicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, 0, 50));
         window.addEventListener("keypress", function(evt) {
             // Le keyCode 32 correspond à la bare espace
             //console.log(ball)

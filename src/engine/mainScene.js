@@ -8,19 +8,18 @@ var mainScene = function () {
 	scene.enablePhysics(new BABYLON.Vector3(0, -9.8, 0), physEngine);
 	physEngine.setTimeStep(1/60);
 
-
 	let univers = new Univers(scene);
 	let playerCamera = initPlayerCamera(scene);
 	//let basketball = initBasketball(scene, playerCamera);
 	let ball = new Ball(scene, playerCamera);
+	
 	ball.initBasketball().then((basketball) => {
-		console.log('bas, ',basketball)
+		console.log('bas, ',basketball.position);
 		const ballControl = new BallControl(basketball);
 		ballControl.initControl();
 	})
-	let plateforme1 = getNewPlateforme(scene);
-	plateforme1.position.x = ball.position.x + 10;
 	
+	var boxPlateforme = getNewPlateforme(scene, playerCamera);
+	console.log(boxPlateforme.position);
   return scene;
-
 };
