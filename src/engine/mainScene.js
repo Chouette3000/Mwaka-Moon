@@ -10,6 +10,7 @@ var mainScene = function () {
 
 
 	let univers = new Univers(scene);
+	univers.init();
 	let playerCamera = initPlayerCamera(scene);
 	//let basketball = initBasketball(scene, playerCamera);
 	let ball = new Ball(scene, playerCamera);
@@ -18,7 +19,7 @@ var mainScene = function () {
 		const ballControl = new BallControl(basketball);
 		ballControl.initControl();
 	})
-	
+
 
   return scene;
 
