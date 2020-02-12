@@ -13,7 +13,7 @@ class BallControl {
 
                 ball.physicsImpostor.applyImpulse(new BABYLON.Vector3(0, 150, 0), ball.getAbsolutePosition());
                 console.log('Jumped !',ball.physicsImpostor.restitution )
-    
+
             }
         }, false);
     }

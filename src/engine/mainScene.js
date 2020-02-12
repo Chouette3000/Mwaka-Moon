@@ -9,6 +9,7 @@ var mainScene = function () {
 	physEngine.setTimeStep(1/60);
 
 	let univers = new Univers(scene);
+	univers.init();
 	let playerCamera = initPlayerCamera(scene);
 	//let basketball = initBasketball(scene, playerCamera);
 	let ball = new Ball(scene, playerCamera);
@@ -18,8 +19,8 @@ var mainScene = function () {
 		const ballControl = new BallControl(basketball);
 		ballControl.initControl();
 	})
-	
+
 	var boxPlateforme = getNewPlateforme(scene, playerCamera);
-	console.log(boxPlateforme.position);
+
   return scene;
 };
