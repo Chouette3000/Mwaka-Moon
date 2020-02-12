@@ -11,7 +11,14 @@ var mainScene = function () {
 
 	let univers = initUnivers(scene);
 	let playerCamera = initPlayerCamera(scene);
-	let basketball = initBasketball(scene, playerCamera);
+	//let basketball = initBasketball(scene, playerCamera);
+	let ball = new Ball(scene, playerCamera);
+	ball.initBasketball().then((basketball) => {
+		console.log('bas, ',basketball)
+		const ballControl = new BallControl(basketball);
+		ballControl.initControl();
+	})
+	
 
   return scene;
 
