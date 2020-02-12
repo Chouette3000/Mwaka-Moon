@@ -9,7 +9,7 @@ var mainScene = function () {
 	physEngine.setTimeStep(1/60);
 
 
-	let univers = initUnivers(scene);
+	let univers = new Univers(scene);
 	let playerCamera = initPlayerCamera(scene);
 	let basketball = initBasketball(scene, playerCamera);
 
