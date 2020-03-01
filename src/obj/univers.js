@@ -3,10 +3,11 @@ class Univers {
     this.scene = scene;
   }
 
-  init() {
+   async init(ball) {
     this.initLight();
     this.initSkybox();
-    this.initGround();
+    await this.initGround();
+    initOnGround(ball,  this.ground);
   }
 
   initLight(){
@@ -28,15 +29,13 @@ class Univers {
   }
 
   async initGround(){
-    this.ground = await BABYLON.Mesh.CreateGroundFromHeightMapAsync("ground", "resources/textures/moon.jpg", 1000, 1000, 100, 0, 50, this.scene, false);
+    this.ground = await BABYLON.Mesh.CreateGroundFromHeightMapAsync("ground", "resources/textures/moon.jpg", 1000, 1000, 100, 0, 5, this.scene, false);
     this.ground.physicsImpostor = new BABYLON.PhysicsImpostor(this.ground, BABYLON.PhysicsImpostor.HeightmapImpostor, { mass: 0, restitution: 0.1 }, this.scene);
     this.ground.convertToFlatShadedMesh();
 
-    var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
-    groundMaterial.diffuseTexture = new BABYLON.Texture("resources/textures/moon.jpg", scene);
+    var groundMaterial = new BABYLON.StandardMaterial("ground", this.scene);
+    groundMaterial.diffuseTexture = new BABYLON.Texture("resources/textures/moon.jpg", this.scene);
     groundMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
     this.ground.material = groundMaterial;
-
   }
-
 }

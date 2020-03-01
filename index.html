@@ -31,16 +31,46 @@
   		<div class="lds-ripple"><div></div><div></div></div>
   	</div>
 
-  	<div id="startingMenu">
+  	<div style="display : none" id="startingMenu">
   		<h1>Mwaka-Moon</h1>
-      <p><button id="play" class="btn btn-white btn-animate">Rejoins la Terre !!!</button></p>
+      <p><button id="playTuto" class="btn btn-white btn-animate">Rejoins la Terre !!!</button></p>
+  	</div>
+
+  	<div style="display : none" id="tutoMenu">
+      <div class="greenbox">
+        <h2>Mission</h2>
+        <p>Je suis un ballon qui s'est perdu dans l'espace. Aide-moi à retourner chez moi !</p>
+        <p>Dans ma derive sur la lune, j'ai aperçu un moyen de rentrer chez moi</p>
+        <p>Utilise les platformes pour me ramener sur Terre (mais prends garde, il y a beaucoup de danger dans l'espace)</p>
+        <h2>Les commandes</h2>
+        <p>Fais avancer et ralentir le ballon avec les flèches haut et bas (pressé de rentrer chez lui, il prend rapidement de la vitesse)</p>
+		<p>Dirige-le avec les flèches droite et gauche</p>
+        <img class="arrow_keys" src="resources/textures/arrow_keys.png" />
+        <p>Fais-le rebondir avec espace</p>
+        <img class="space_key"  src="resources/textures/space_key.png" />
+      </div>
+      <p class="button"><button id="playGame" class="btn btn-white btn-animate">Accepter la mission</button></p>
+  	</div>
+
+    <div style="display : none" id="currentLevel">
+      <h2 class="levelNB">Niveau : 1</h2>
+  	</div>
+
+    <div style="display : none" id="endMenu">
+      <div class="greenbox">
+       <h2>Mission échouée</h2>
+       <p id="endText"></p>
+      </div>
+      <p class="button"><button id="replayGame" class="btn btn-white btn-animate">Retenter</button></p>
   	</div>
 
   	<canvas id="canvas"></canvas>
 
+
   	<script src="src/engine/tools.js"></script>
   	<script src="src/engine/menu/loadingMenu.js"></script>
   	<script src="src/engine/menu/startMenu.js"></script>
+  	<script src="src/engine/menu/endMenu.js"></script>
   	<script src="src/engine/playerCamera.js"></script>
   	<script src="src/obj/univers.js"></script>
   	<script src="src/obj/plateforme.js"></script>
@@ -48,10 +78,16 @@
 
   	<script src="src/obj/basketball.js"></script>
   	<script src="src/obj/Ball.js"></script>
+  	<script src="src/obj/spike.js"></script>
   	<script src="src/control/BallControl.js"></script>
+    <script src="src/engine/menuScene.js"></script>
   	<script src="src/engine/mainScene.js"></script>
-
-  	<script src="src/engine/startMenuScene.js"></script>
+  	<script src="src/engine/endVictoireScene.js"></script>
+  	<script src="src/levels/level.js"></script>
+  	<script src="src/levels/level1.js"></script>
+  	<script src="src/levels/level2.js"></script>
+  	<script src="src/levels/level3.js"></script>
+  	<script src="src/engine/levels.js"></script>
 
     <script src="src/app.js"></script>
 

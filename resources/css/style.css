@@ -1,8 +1,9 @@
 /* ============================================================================
-															General CSS
+									General CSS
    ============================================================================ */
 
 html, body {
+	background-color: black;
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
@@ -25,52 +26,41 @@ h1{
  font-family: hemi-head-bd-it;
 }
 
-/* ============================================================================
-															Start Menu
-   ============================================================================ */
-#startingMenu {
+#tutoMenu, #startingMenu, #endMenu, #currentLevel {
+	font-family: hemi-head-bd-it;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 }
 
-#startingMenu h1{
-	font-size: 7em;
-	color: green;
-	text-shadow: 10px 10px #FFF;
-}
-#startingMenu p, #startingMenu h1{
-	text-align: center;
-}
-#startingMenu button{
+button{
 	font-family: hemi-head-bd-it;
 }
 
-#startingMenu .btn {
+.btn {
     text-transform: uppercase;
     text-decoration: none;
     padding: 15px 40px;
-		margin-top: 20%;
     border-radius: 100px;
     transition: all .2s;
 }
 
-#startingMenu .btn:hover {
+.btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-#startingMenu .btn:active {
+.btn:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-#startingMenu .btn-white {
+.btn-white {
     background-color: #fff;
     color: #777;
 }
 
-#startingMenu .btn::after {
+.btn::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -83,16 +73,21 @@ h1{
     transition: all .4s;
 }
 
-#startingMenu .btn-white::after {
+.btn-white::after {
     background-color: #34a853;
 }
 
-#startingMenu .btn:hover::after {
+
+.btn-white {
+    background-color: none;
+}
+
+.btn:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
 
-#startingMenu .btn-animated {
+.btn-animated {
     animation: moveInBottom 5s ease-out;
     animation-fill-mode: backwards;
 }
@@ -108,49 +103,72 @@ h1{
         transform: translateY(0px);
     }
 }
-/*
-.button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
+
+#currentLevel .levelNB{
+	background-color: green;
+	border: 2px solid black;
+	border-radius: 10px;
+	opacity: 0.8;
+	color: black;
+	padding: 5px;
+	margin: 5px;
 	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-	border-radius: 50%;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	font-size: 250%;
-}*/
+}
 
 /* ============================================================================
-															Loading Menu
+									Tuto Menu
+   ============================================================================ */
+ #tutoMenu .greenbox {
+	 border: 5px solid black;
+	 border-radius: 15px;
+	 background-color: green;
+	 margin: 4%;
+	 padding: 2%;
+	 opacity: 0.8;
+	 color: white;
+ }
+
+#tutoMenu h2 {
+	text-shadow: 2px 2px #000;
+}
+ #tutoMenu .button {
+	text-align: center;
+ }
+
+ #tutoMenu .arrow_keys, #tutoMenu .space_key {
+	height: 50px;
+ }
+/* ============================================================================
+									Start Menu
+   ============================================================================ */
+#startingMenu .btn {
+	margin-top: 20%;
+}
+#startingMenu h1{
+	font-size: 7em;
+	color: green;
+	text-shadow: 10px 10px #FFF;
+}
+#startingMenu p, #startingMenu h1{
+	text-align: center;
+}
+
+/* ============================================================================
+									Loading Menu
    ============================================================================ */
 #loadingMenu {
-	display: none;
-	margin: auto;
-	width: 100px;
-	position: absolute;
-
-	/* this is for vetical align */
-	top: 50%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+	margin-top: 15%;
+	text-align: center;
 }
 #loadingMenu h1{
-    color: grey;
-    font-weight: bolder;
-	display: inline-block;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+  color: white;
+  font-weight: bolder;
 	font-size: 250%;
 }
 .lds-ripple {
-  display: inline-block;
   position: relative;
-
+	display: block;
+	margin-left: 38%;
 }
 .lds-ripple div {
   position: absolute;
@@ -162,19 +180,45 @@ h1{
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
+
 @keyframes lds-ripple {
   0% {
-    top: 36px;
-    left: 36px;
+    top: 180px;
+    left: 180px;
     width: 0;
     height: 0;
-    opacity: 5;
+    opacity: 1;
   }
   100% {
     top: 0px;
     left: 0px;
-    width: 200px;
-    height: 200px;
+    width: 360px;
+    height: 360px;
     opacity: 0;
   }
+}
+
+/* ============================================================================
+									End Menu
+   ============================================================================ */
+ #endMenu .greenbox {
+	 border: 5px solid black;
+	 border-radius: 15px;
+	 background-color: green;
+	 margin: 4%;
+	 padding: 2%;
+	 opacity: 0.8;
+	 color: white;
+ }
+
+#endMenu h2 {
+	text-shadow: 2px 2px #000;
+}
+
+ #endMenu .btn {
+	margin-top: 20%;
+}
+
+#endMenu p, #startingMenu h1{
+	text-align: center;
 }
