@@ -6,14 +6,46 @@ BABYLON.Mesh.CreateGroundFromHeightMapAsync = function (a, b, c, d, e, f, g, sce
   });
 }
 
+var plateforms = [];
+var myBall = null;
+var controlOn = true;
+
 var initOnGround = function(ball, plateform){
-  function checkOnGround() {
+  myBall = ball;
+  plateforms.push(plateform);
+}
+
+var onGroundEnd = false;
+var initOnGroundEnd = function(ball, lastPlateform){
+  function checkOnGroundEnd(){
     if (controlOn){
-      if (ball.intersectsMesh(plateform, false)){
-        document.getElementById("canvas").dispatchEvent(new Event('onGround'));
+      if(ball.intersectsMesh(lastPlateform, false)){
+        onGroundEnd = true;
       }
-      setTimeout(checkOnGround, 500);
+      else{
+        setTimeout(checkOnGroundEnd, 100);
+      }
     }
   }
-  checkOnGround();
+  checkOnGroundEnd();
 }
+
+var checkOnGround = function(){
+
+  if (controlOn){
+    if(myBall){
+      for(let i = 0; i < plateforms.length; i++){
+        if (myBall.intersectsMesh(plateforms[i], false)){
+          console.log("onTheGround");
+          document.getElementById("canvas").dispatchEvent(new Event('onGround'));
+          break;
+        }
+      }
+    }
+  }
+  else {
+    plateforms = [];
+  }
+  setTimeout(checkOnGround, 100);
+}
+checkOnGround();

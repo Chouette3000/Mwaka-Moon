@@ -35,33 +35,33 @@ class Level{
 		this.spherePivot.rotation.y = this.rotationX;
 		this.spherePivot.visibility = 0;
 	}
-	
+
 	calculPositionDebut(){
 		var firstPlatX = this.positionDebutLvl.x - (this.sizeLvl[0]/2);
 		var firstPlatY = this.positionDebutLvl.y;
 		var firstPlatZ = this.positionDebutLvl.z- (this.sizeLvl[0]/2);
 		if(this.positionDebutLvl.x != 0){
-			firstPlatX = this.positionDebutLvl.x * (-1); 
+			firstPlatX = this.positionDebutLvl.x * (-1);
 			firstPlatY = this.positionDebutLvl.y;
-			firstPlatZ = this.positionDebutLvl.z * (-1); 
+			firstPlatZ = this.positionDebutLvl.z * (-1);
 		}
 		this.positionInitLvl =  new BABYLON.Vector3(firstPlatX, firstPlatY, firstPlatZ);
 	}
-	
+
 	calculPositionFin(){
 		var maxX = (this.sizeLvl[0]/2)-(this.plateSize);
 		var maxY = (this.sizeLvl[1])-(this.plateSize);
-		var maxZ = (this.sizeLvl[2]/2)-(this.plateSize);	
+		var maxZ = (this.sizeLvl[2]/2)-(this.plateSize);
 		this.positionFinLvl = new BABYLON.Vector3(maxX, maxY, maxZ);
 	}
-	
+
 	initLimits(){
 		this.calculPositionDebut();
 		this.calculPositionFin();
-		this.borderPlateforms[0] = new Plateforme(this.scene, this.plateSize, this.positionInitLvl, "resources/textures/iceRed.png", this.spherePivot);	
+		this.borderPlateforms[0] = new Plateforme(this.scene, this.plateSize, this.positionInitLvl, "resources/textures/iceRed.png", this.spherePivot);
 		this.borderPlateforms[1] = new Plateforme(this.scene, this.plateSize, this.positionFinLvl, "resources/textures/iceRed.png", this.spherePivot);
 	}
-	
+
 	initTextures(){
 		//var texturePlatRed = "resources/textures/iceRed.png";
 		var texturePlatIce = "resources/textures/ice.jpg";
@@ -116,5 +116,10 @@ class Level{
 
 	getLastPlateformePosition(){
 		return this.borderPlateforms[1].boxPlateforme.position;
+	}
+
+
+	getLastPlateforme(){
+		return this.borderPlateforms[1].boxPlateforme;
 	}
 }

@@ -20,53 +20,6 @@ class BallControl {
     }
 
     turnCamera(angle , angleMax, i , dir = 1 , speed = 50){
-        // var angleOppose = (angle) => {
-        //     angle = angle % (2 * Math.PI); // securité
-        //     if(angle < Math.PI)
-        //         return angle + Math.PI;
-        //     return angle - Math.PI;
-        // }
-
-        // var degre = (angle) => {
-        //     return angle * 180/Math.PI
-        // }
-
-        // var coteAngleProche = () => {
-        //     const aFrom = this.playerCamera.alpha % (2 * Math.PI);
-        //     const aDest = (this.angle + Math.PI) % (2 * Math.PI);
-        //     const angleOP = angleOppose(aFrom);
-
-        //     //console.log('aFrom-camera' , degre(aFrom))
-        //     //console.log('anOP-camera' , degre(angleOP))
-        //     //console.log('aDest-camera\n' , degre(aDest))
-
-        //     if(aFrom < Math.PI){
-        //         if(aDest > aFrom && aDest < angleOP)
-        //             return 1;
-        //         return -1
-        //     }
-        //     else{
-        //         if(aDest < aFrom && aDest > angleOP)
-        //             return -1;
-        //         return 1
-        //     }
-        // }
-
-        // const interAngle = Math.abs(
-        //     this.playerCamera.alpha % (2 * Math.PI)
-        //     - (this.angle + Math.PI) % (2 * Math.PI)
-        // );
-        // console.log('cond',Math.abs(interAngle - angle))
-        // if(Math.abs(interAngle - angle) > 0)  {
-        //     setTimeout(()=>{
-        //         console.log('coteAngle Proche' , coteAngleProche())
-        //         //console.log('angle ballon ', degre(this.angle) )
-        //         //console.log('angle camera ', degre(this.playerCamera.alpha) )
-        //         this.playerCamera.alpha += angle * coteAngleProche()
-        //         this.turnCamera(angle, angleMax, i + angle , dir )
-        //     },50)
-        // }
-        // else console.log('fin',i)
 
         if(i <= angleMax){
             setTimeout(()=>{
@@ -114,6 +67,7 @@ class BallControl {
         window.addEventListener("keyup", function(evt) {
           if(evt.keyCode == 32){
             barreEspaceKeyUp = true;
+            jumpAllow = false;
           }
         });
 

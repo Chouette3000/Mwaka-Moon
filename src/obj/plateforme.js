@@ -19,10 +19,10 @@ class Plateforme{
 		mat.alpha = 0.4;
 
 		// Plateforme
-		let boxPlateforme = BABYLON.MeshBuilder.CreateBox("box"+rotationZ, { height: height, width: this.sizeBox, depth: this.sizeBox}, this.scene);
+		let boxPlateforme = BABYLON.MeshBuilder.CreateBox("box"+rotationZ, { height: height+1, width: this.sizeBox, depth: this.sizeBox}, this.scene);
 		boxPlateforme.position = position; // 150
 		boxPlateforme.material = mat;
-	
+
 		//boxPlateforme.rotation.y = rotationX;
 		boxPlateforme.rotation.z = rotationZ;
 		boxPlateforme.physicsImpostor = new BABYLON.PhysicsImpostor(boxPlateforme, BABYLON.PhysicsImpostor.HeightmapImpostor, { mass: 0, restitution: 0.9 }, this.scene);
