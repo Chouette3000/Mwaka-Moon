@@ -13,33 +13,29 @@ class BallControl {
         //console.log('d == ',this.dx, this.dy , this.dz);
         setTimeout(()=>{
             this.listenerPosition()
-            //this.speed = this.speed == 0 ? 0 : 80 + this.ball.physicsImpostor.getLinearVelocity().y
         },500)
     }
     isOnGround(){
         return Math.abs(this.ball.position.y - this.dy ) < 0.1
     }
 
-    turnCamera(angle , angleMax, i , dir = 1 , speed = 50, saut = 0){
+    turnCamera(angle , angleMax, i , dir = 1 , speed = 50){
 
         if(i <= angleMax){
             setTimeout(()=>{
                 //console.log(i)
                 this.playerCamera.alpha += angle * dir
-                this.turnCamera(angle, angleMax, i + angle , dir , speed, saut)
+                this.turnCamera(angle, angleMax, i + angle , dir , speed)
             },speed)
         }
         //else this.playerCamera.alpha = (this.angle - Math.PI)
         else {
-            console.log('saut = ', saut);
-            
-            this.turnBall(saut)
+            const speed = 80
+            this.turnBall()
         }
     }
 
-    turnBall(saut = 0){
-        //console.log(this.ball.physicsImpostor);
-        
+    turnBall(){
         this.angle = this.playerCamera.alpha + Math.PI;
         let xSpeed = Math.cos(this.angle ) * this.speed
         let zSpeed = Math.sin(this.angle ) * this.speed
@@ -50,31 +46,11 @@ class BallControl {
         //console.log('before :', bf_x , bf_z)
         //console.log('beforeSpeed :', xSpeed , zSpeed)
         this.ball.physicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, bf_y, 0));
-        this.ball.physicsImpostor.applyImpulse(new BABYLON.Vector3(xSpeed, saut, zSpeed) , this.ball.getAbsolutePosition());
+        this.ball.physicsImpostor.applyImpulse(new BABYLON.Vector3(xSpeed, 0, zSpeed) , this.ball.getAbsolutePosition());
         //console.log('after :', ball.physicsImpostor.getLinearVelocity())
     }
 
-    animationFin(){
-        console.log('animation fin');
-        this.ball.physicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
-        this.turnCamera(0.1,2*Math.PI,0,-1,20);
-
-    }
-
-    decelerateBall(intensity){
-        if(this.speed > 1 && !this.onAccelerate){
-            setTimeout(()=>{
-                this.speed *= intensity;
-                this.turnBall()
-                this.decelerateBall(intensity)
-            },50)
-
-        }
-        
-    }
-
     initControl(){
-        this.listenerPosition()
         var jumpAllow = true;
         var barreEspaceKeyUp = true;
         const ball = this.ball;
@@ -83,10 +59,9 @@ class BallControl {
         playerCamera.lockedTarget = this.ball;
         controlOn = true;
 
-        document.getElementById("canvas").addEventListener('onGround', function(e){
+        document.getElementById("canvas").addEventListener('onGround', function(){
           jumpAllow = true;
-          //this.turnBall(100)
-        }.bind(this));
+        });
 
 
         window.addEventListener("keyup", function(evt) {
@@ -100,11 +75,9 @@ class BallControl {
           if(controlOn){
             // Le keyCode 32 correspond à la bare espace
             if(evt.keyCode == 32 && jumpAllow && barreEspaceKeyUp){
-              
-              barreEspaceKeyUp = false;
               jumpAllow = false;
-              this.turnBall(100)
-              //ball.physicsImpostor.applyImpulse(new BABYLON.Vector3(0, 100, 0), ball.getAbsolutePosition());
+              barreEspaceKeyUp = false;
+              ball.physicsImpostor.applyImpulse(new BABYLON.Vector3(0, 100, 0), ball.getAbsolutePosition());
             }
 
             // var event = new Event('restartGame');
@@ -116,40 +89,23 @@ class BallControl {
             }
 
             if(evt.keyCode === 39){
-                this.turnCamera(0.01,0.1,0,-1,20)
+                this.turnCamera(0.01,0.1,0,-1)
 
             }
 
             if(evt.keyCode === 40){ //key down
-                //this.speed = Math.max(0 , this.speed)
-                if(this.onAccelerate){
-                    this.onAccelerate = false
-                    this.decelerateBall(0.90)
-
-                }
+                this.speed = 0
+                this.turnBall()
                 //this.turnCamera(0.02,Math.PI,0,1,5)
 
                 //ball.physicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, 0, 0));
 
             }
             if(evt.keyCode === 38){ //key up
-                this.onAccelerate = true
-                this.speed = Math.max(50 , Math.min(150, this.speed)) 
-                this.speed*=1.1;
+                this.speed = 80
                 this.turnBall()
             }
           }
-        }.bind(this), false);
-
-        window.addEventListener("keyup", function(evt) {
-            if(evt.keyCode === 38){ //key up
-                //this.onAccelerate = false
-                //this.decelerateBall(0.90)
-            }
-        }.bind(this), false);
-
-        window.addEventListener("mousemove", function(evt) {
-            this.playerCamera.beta += evt.movementY * 0.001 * (800 / 250);
         }.bind(this), false);
     }
 
