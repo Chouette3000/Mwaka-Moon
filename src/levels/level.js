@@ -16,8 +16,8 @@ class Level{
 		this.initLevel();
 		this.initOnGroundAll();
 		//console.log("plateforme 0: " + this.borderPlateforms[0].boxPlateforme.position);
-		//console.log("plateforme 1: " + this.borderPlateforms[1].boxPlateforme.position);
-		//console.log("plateforme avant dernière: " + this.plateforms[this.plateforms.length-1].boxPlateforme.position);
+		console.log("plateforme 1: " + this.borderPlateforms[1].boxPlateforme.position);
+		console.log("plateforme avant dernière: " + this.plateforms[this.plateforms.length-1].boxPlateforme.position);
 	}
 
 	initOnGroundAll(){

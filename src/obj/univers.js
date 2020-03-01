@@ -26,6 +26,7 @@ class Univers {
     skyboxMaterial.diffuseColor = new BABYLON.Color3(0, 0, 0);
     skyboxMaterial.specularColor = new BABYLON.Color3(0, 0, 0);
     this.skybox.material = skyboxMaterial;
+	console.log(this.skybox);
   }
 
   async initGround(){

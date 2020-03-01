@@ -11,7 +11,7 @@ class Levels {
     this.topIndex = bottomIndex;
     this.levelsArray = [];
     $( "#currentLevel .levelNB" ).last().html("Niveau : 1");
-	this.positionBase = new BABYLON.Vector3(0, this.topIndex, 0);
+	  this.positionBase = new BABYLON.Vector3(0, this.topIndex, 0);
     this.initLevels();
     this.checkInLevels();
     onGroundEnd = false;
@@ -25,7 +25,7 @@ class Levels {
 
     this.addLevel(Level1, 0);
     this.addLevel(Level2, Math.PI);
-	this.addLevel(Level3, 0);
+	  this.addLevel(Level3, 0);
   }
 
   addLevel(levelClass, rotation){
