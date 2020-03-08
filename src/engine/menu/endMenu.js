@@ -45,6 +45,9 @@ class EndMenu {
 			case 'endLune':
 				return "Le ballon prit peur dès les premiers obstacles, il préféra rester au sol et explorer la Lune.";
 				break;
+			case 'endBoom':
+				return "Ca sent le barbecue, le ballon n'est pas prêt à risquer son caoutchouc !";
+				break;
 		}
 	}
 }

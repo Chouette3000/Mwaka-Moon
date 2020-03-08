@@ -37,19 +37,63 @@
   	</div>
 
   	<div style="display : none" id="tutoMenu">
-      <div class="greenbox">
-        <h2>Mission</h2>
-        <p>Je suis un ballon qui s'est perdu dans l'espace. Aide-moi à retourner chez moi !</p>
-        <p>Dans ma derive sur la lune, j'ai aperçu un moyen de rentrer chez moi</p>
-        <p>Utilise les platformes pour me ramener sur Terre (mais prends garde, il y a beaucoup de danger dans l'espace)</p>
-        <h2>Les commandes</h2>
-        <p>Fais avancer et ralentir le ballon avec les flèches haut et bas (pressé de rentrer chez lui, il prend rapidement de la vitesse)</p>
-		<p>Dirige-le avec les flèches droite et gauche</p>
-        <img class="arrow_keys" src="resources/textures/arrow_keys.png" />
-        <p>Fais-le rebondir avec espace</p>
-        <img class="space_key"  src="resources/textures/space_key.png" />
-      </div>
-      <p class="button"><button id="playGame" class="btn btn-white btn-animate">Accepter la mission</button></p>
+      <table>
+        <tr>
+          <td>
+            <div class="greenbox">
+              <h2>Mission</h2>
+              <p>Je suis un ballon qui s'est perdu dans l'espace. Aide-moi à retourner chez moi !</p>
+              <p>Dans ma derive sur la lune, j'ai aperçu un moyen de rentrer chez moi</p>
+              <p>Utilise les platformes pour me ramener sur Terre (mais prends garde, il y a beaucoup de danger dans l'espace)</p>
+            </div>
+          </td>
+          <td>
+            <div class="greenbox">
+              <h2>Choix difficulté</h2>
+              <table class="selectDifficulty">
+                <tr>
+                  <td>
+                    <h3>Débutant</h3>
+                    <img id="playSimple" class="lvlSimple Off"  src="resources/textures/selectDifficulty/lvlSimple.png" />
+                    <img style="display: none;" class="lvlSimple On"  src="resources/textures/selectDifficulty/lvlSimpleOn.png" />
+                  </td>
+                  <td>
+                    <h3>Aguerri</h3>
+                    <img id="playNormal" style="display: none;" class="lvlNormal Off"  src="resources/textures/selectDifficulty/lvlNormal.png" />
+                    <img class="lvlNormal On"  src="resources/textures/selectDifficulty/lvlNormalOn.png" />
+                  </td>
+                  <td>
+                    <h3>Fou Furieux</h3>
+                    <img id="playHard" class="lvlHard Off"  src="resources/textures/selectDifficulty/lvlHard.png" />
+                    <img style="display: none;" class="lvlHard On"  src="resources/textures/selectDifficulty/lvlHardOn.png" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="greenbox">
+              <h2>Les commandes</h2>
+              <table class="commandes">
+                <tr>
+                  <td>
+                    <p>Dirige-le avec les flèches droite et gauche.</p>
+                    <p>Fais avancer et ralentir le ballon avec les flèches haut et bas (pressé de rentrer chez lui, il prend rapidement de la vitesse)</p>
+                    <p>Fais-le rebondir avec espace.</p>
+                  </td>
+                  <td>
+                    <img class="arrow_keys" src="resources/textures/arrow_keys.png" />
+                    <img class="space_key"  src="resources/textures/space_key.png" />
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <td><p class="button"><button id="playGame" class="btn btn-white btn-animate">Accepter la mission</button></p></td>
+        </tr>
+      </table>
   	</div>
 
     <div style="display : none" id="currentLevel">
@@ -68,6 +112,7 @@
 
 
   	<script src="src/engine/tools.js"></script>
+  	<script src="src/engine/particlesTools.js"></script>
   	<script src="src/engine/menu/loadingMenu.js"></script>
   	<script src="src/engine/menu/startMenu.js"></script>
   	<script src="src/engine/menu/endMenu.js"></script>
@@ -82,11 +127,14 @@
   	<script src="src/control/BallControl.js"></script>
     <script src="src/engine/menuScene.js"></script>
   	<script src="src/engine/mainScene.js"></script>
-  	<script src="src/engine/endVictoireScene.js"></script>
+    <script src="src/engine/endVictoireScene.js"></script>
+    <script src="src/score/Chrono.js"></script>
   	<script src="src/levels/level.js"></script>
   	<script src="src/levels/level1.js"></script>
   	<script src="src/levels/level2.js"></script>
   	<script src="src/levels/level3.js"></script>
+  	<script src="src/levels/level4.js"></script>
+  	<script src="src/levels/level5.js"></script>
   	<script src="src/engine/levels.js"></script>
 
     <script src="src/app.js"></script>

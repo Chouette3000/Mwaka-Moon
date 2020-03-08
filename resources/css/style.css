@@ -131,13 +131,30 @@ button{
 #tutoMenu h2 {
 	text-shadow: 2px 2px #000;
 }
- #tutoMenu .button {
+#tutoMenu .button {
 	text-align: center;
- }
+}
 
- #tutoMenu .arrow_keys, #tutoMenu .space_key {
+#tutoMenu .arrow_keys {
 	height: 50px;
- }
+}
+#tutoMenu .space_key {
+	height: 25px;
+}
+
+#tutoMenu .commandes {
+	text-align: center;
+}
+#tutoMenu .selectDifficulty {
+	text-align: center;
+}
+#tutoMenu .selectDifficulty td img{
+	width: 30%;
+}
+
+#tutoMenu .selectDifficulty td img:hover{
+	width: 20%;
+}
 /* ============================================================================
 									Start Menu
    ============================================================================ */

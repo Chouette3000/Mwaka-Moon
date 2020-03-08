@@ -1,34 +1,22 @@
-# Readme
+# Mwaka-Moon
 
-Simple boilerplate project for [babylonjs](http://www.babylonjs.com/) using TypeScript and Webpack.
+Mwaka-Moon est un jeu de plateforme dans lequel vous porterez main forte à un ballon perdu.
 
-## Install
+Lien du jeu : https://mystifying-feynman-8de0f3.netlify.com/
+Il est possible qu'un refresh de la page soit nécessaire au premier lancement. 
 
-Install TypeScript (globally):
+## Avancée actuelle
 
-````
-npm install -g typescript
-npm link typescript
-````
+ Le jeu est jouable.
+ 
+- Gestion de plusieurs niveaux
+- Gestion de la gravité
+- Contrôles terminés
+- Environnement fait.
+- Musiques de fond
+- Fin de partie
 
-Install dependencies:
+## Avancée future
 
-````
-npm install
-
-````
-
-Additionally, to import `babylonjs` as a TypeScript module, modify `babylon.d.ts` inside
-`node_modules` and add the following code at the bottom of the file:
-
-````typescript
-export = BABYLON;
-````
-
-## Compile & Run 
-
-````
-./node_modules/.bin/webpack -w 
-````
-
-Then open `index.html`
+- Ajout de nouvelles plateformes customizées
+- Ajout de niveaux supplémentaires

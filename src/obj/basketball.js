@@ -27,7 +27,6 @@ var initBasketball = async function (scene, playerCamera) {
 
 	var newMeshes = (await BABYLON.SceneLoader.ImportMeshAsync("", "resources/obj/ball/", "scene.gltf", scene)).meshes;
 
-	console.log('ball', ball)
     var sphere = makeSphere(newMeshes, scene)
     //var sphere2 = makeSphere(newMeshes, scene)
 	sphere.position.y += 150

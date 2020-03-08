@@ -1,4 +1,5 @@
 var startMenu = null;
+var difficulty = 2;
 class StartMenu {
   constructor(engine, scene) {
     var loadingMenu = new LoadingMenu();
@@ -10,6 +11,7 @@ class StartMenu {
       startMenu.showStartMenu();
       loadingMenu.hide();
   	});
+    this.selectDifficulty();
     document.getElementById("playTuto").addEventListener("click", this.onPlayTutoButton);
     document.getElementById("playGame").addEventListener("click", this.onPlayGameButton);
 	  document.getElementById("endMenu").addEventListener('restartGame', this.onPlayTutoButton);
@@ -22,6 +24,42 @@ class StartMenu {
   onPlayTutoButton() {
     startMenu.hideStartMenu();
     startMenu.showTutoMenu();
+  }
+
+  selectDifficulty(){
+    if(difficulty == 2)
+      this.playNormal();
+    else if(difficulty == 1)
+      this.playSimple();
+    else
+      this.playHard();
+    document.getElementById("playSimple").addEventListener("click", this.playSimple);
+    document.getElementById("playNormal").addEventListener("click", this.playNormal);
+    document.getElementById("playHard").addEventListener("click", this.playHard);
+  }
+
+  playSimple() {
+    difficulty = 1;
+    startMenu.playDifficultyInit();
+    $("#tutoMenu .lvlSimple.Off").hide();
+    $("#tutoMenu .lvlSimple.On").show();
+  }
+  playNormal() {
+    difficulty = 2;
+    startMenu.playDifficultyInit();
+    $("#tutoMenu .lvlNormal.Off").hide();
+    $("#tutoMenu .lvlNormal.On").show();
+  }
+  playHard() {
+    difficulty = 3;
+    startMenu.playDifficultyInit();
+    $("#tutoMenu .lvlHard.Off").hide();
+    $("#tutoMenu .lvlHard.On").show();
+  }
+
+  playDifficultyInit(){
+    $("#tutoMenu .On").hide();
+    $("#tutoMenu .Off").show();
   }
 
   onPlayGameButton() {

@@ -1,4 +1,5 @@
 BABYLON.StandardMaterial.ReflectionTextureEnabled = false;
+var difficulty = 2;
 var musicAmbiance = null;
 var musicVictoire = null;
 var musicDefaite = null;
@@ -15,23 +16,22 @@ var mainScene = function () {
 	let playerCamera = initPlayerCamera(scene);
 	let univers = new Univers(scene);
 
-
 	//let basketball = initBasketball(scene, playerCamera);
 	let ball = new Ball(scene, playerCamera);
 
 	ball.initBasketball().then((basketball) => {
 
 		//console.log('bas, ',basketball.position);
-		const ballControl = new BallControl(basketball , playerCamera);
+		const ballControl = new BallControl(basketball , playerCamera, difficulty);
 		ballControl.initControl();
-		positionBall = basketball.position;
 		univers.init(basketball);
 		var levels = new Levels(scene, basketball, 200, 200, 7);
+
 		//scene.debugLayer.show();
 	})
 
 	scene.ambientColor = new BABYLON.Color3(1, 1, 1);
-	
+
 	musicMenu.stop();
 	musicAmbiance = new BABYLON.Sound("musicAmbiance", "resources/music/Danse_hongroise.mp3", scene, null, {
 		loop: true,

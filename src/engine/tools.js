@@ -6,17 +6,20 @@ BABYLON.Mesh.CreateGroundFromHeightMapAsync = function (a, b, c, d, e, f, g, sce
   });
 }
 
+var endBoom = false;
 var plateforms = [];
+var types = [];
 var myBall = null;
 var controlOn = true;
 
-var initOnGround = function(ball, plateform){
+var initOnGround = function(ball, plateform, type){
   myBall = ball;
   plateforms.push(plateform);
+  types.push(type);
 }
 
 var onGroundEnd = false;
-var initOnGroundEnd = function(ball, lastPlateform){
+var initOnGroundEnd = function(ball, lastPlateform, type = ""){
   function checkOnGroundEnd(){
     if (controlOn){
       if(ball.intersectsMesh(lastPlateform, false)){
@@ -36,7 +39,10 @@ var checkOnGround = function(){
     if(myBall){
       for(let i = 0; i < plateforms.length; i++){
         if (myBall.intersectsMesh(plateforms[i], false)){
-          console.log("onTheGround");
+          console.log(types[i]);
+          if(types[i] == "fire"){
+            endBoom = true;
+          }
           document.getElementById("canvas").dispatchEvent(new Event('onGround'));
           break;
         }

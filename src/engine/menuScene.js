@@ -21,7 +21,7 @@ var startMenuScene = function () {
 	skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
 	skyboxMaterial.diffuseTexture = new BABYLON.Texture("resources/textures/skybox/skybox_py.jpg", scene);
 	skybox.material = skyboxMaterial;
-	
+
 	// music
 	musicMenu = new BABYLON.Sound("musicMenu", "resources/music/chevauchee-des-walkyries.mp3", scene, null, {
 		loop: true,
@@ -29,7 +29,7 @@ var startMenuScene = function () {
 	});
 	musicMenu.setVolume(0.1);
 	rotationBallon(camera, scene);  //scene.debugLayer.show();
-	
+
 	return scene;
 };
 
