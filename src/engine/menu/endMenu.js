@@ -9,7 +9,6 @@ class EndMenu {
 		musicAmbiance.stop();
 		$("#endMenu").show();
 		if(end == "endSuccess"){
-			//musicVictoire = new BABYLON.Sound("musicVictoire", "resources/music/sax-gandalf.mp3", scene);
 			musicVictoire.play();
 			$( "#endMenu h2" ).last().html( "Mission accomplie" );
 		}

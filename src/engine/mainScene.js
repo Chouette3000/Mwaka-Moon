@@ -16,12 +16,10 @@ var mainScene = function () {
 	let playerCamera = initPlayerCamera(scene);
 	let univers = new Univers(scene);
 
-	//let basketball = initBasketball(scene, playerCamera);
 	let ball = new Ball(scene, playerCamera);
 
 	ball.initBasketball().then((basketball) => {
 
-		//console.log('bas, ',basketball.position);
 		const ballControl = new BallControl(basketball , playerCamera, difficulty);
 		ballControl.initControl();
 		univers.init(basketball);
@@ -45,8 +43,5 @@ var mainScene = function () {
 	musicVictoire.setVolume(2.5);
 	musicVictoire.loop = true;
 	musicDefaite.loop = true;
-	//BABYLON.Engine.audioEngine.setGlobalVolume(1.5);
-	//musicAmbiance.play();*/
 	return scene;
 };
-// x, y, z, indiceRotation

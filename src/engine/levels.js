@@ -27,11 +27,11 @@ class Levels {
   }
 
   initLevels(){
-    /*this.addLevel(Level1, 0);
-    this.addLevel(Level2, Math.PI);*/
-	//this.addLevel(Level3, 0);
+    this.addLevel(Level1, 0);
+    this.addLevel(Level2, Math.PI);
+	this.addLevel(Level3, 0);
 	this.addLevel(Level4, Math.PI);
-	//this.addLevel(Level5, 0);
+	this.addLevel(Level5, 0);
   }
 
    initAnimations(){
