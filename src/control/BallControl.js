@@ -62,7 +62,7 @@ class BallControl {
         //console.log('beforeSpeed :', xSpeed , zSpeed)
         this.ball.physicsImpostor.setLinearVelocity(new BABYLON.Vector3(0, bf_y, 0));
         this.ball.physicsImpostor.applyImpulse(new BABYLON.Vector3(xSpeed, saut, zSpeed) , this.ball.getAbsolutePosition());
-        //console.log('after :', ball.physicsImpostor.getLinearVelocity())
+		//console.log('after :', ball.physicsImpostor.getLinearVelocity())
     }
 
     animationFin(){
@@ -79,9 +79,7 @@ class BallControl {
                 this.turnBall()
                 this.decelerateBall(intensity)
             },50)
-
         }
-        
     }
 
     initControl(){
@@ -111,7 +109,7 @@ class BallControl {
           if(controlOn){
             // Le keyCode 32 correspond à la bare espace
             if(evt.keyCode == 32 && jumpAllow && barreEspaceKeyUp){
-              
+              sonRebond.play();
               barreEspaceKeyUp = false;
               jumpAllow = false;
               this.turnBall(100)

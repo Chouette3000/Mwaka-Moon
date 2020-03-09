@@ -39,7 +39,7 @@ var checkOnGround = function(){
     if(myBall){
       for(let i = 0; i < plateforms.length; i++){
         if (myBall.intersectsMesh(plateforms[i], false)){
-          console.log(types[i]);
+          //console.log(types[i]);
           if(types[i] == "fire"){
             endBoom = true;
           }

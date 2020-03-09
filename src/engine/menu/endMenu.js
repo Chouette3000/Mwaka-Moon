@@ -10,11 +10,11 @@ class EndMenu {
 		$("#endMenu").show();
 		if(end == "endSuccess"){
 			musicVictoire.play();
-			$( "#endMenu h2" ).last().html( "Mission accomplie" );
+			$( "#endMenu .typeEnd" ).last().html( "Mission accomplie" );
 		}
 		else{
 			musicDefaite.play();
-			$( "#endMenu h2" ).last().html( "Mission échouée" );
+			$( "#endMenu .typeEnd" ).last().html( "Mission échouée" );
 		}
 		$( "#endMenu #endText" ).last().html( this.getTextFin(end) );
 	}
@@ -30,7 +30,7 @@ class EndMenu {
 	getTextFin(fin){
 		switch (fin) {
 			case 'endSuccess':
-				return "Mission accomplie avec succès !";
+				return "Le ballon a enfin atteint son objectif ! Pour vous remercier, il souhaite retenter l'aventure à vos côtés !";
 				break;
 			case 'endSpace':
 				return "Et le ballon dériva dans l'espace... Après des années d'errance, il atterit sur Mars.";

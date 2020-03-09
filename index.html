@@ -91,7 +91,13 @@
               </table>
             </div>
           </td>
-          <td><p class="button"><button id="playGame" class="btn btn-white btn-animate">Accepter la mission</button></p></td>
+          <td>
+            <div class="greenbox">
+              <h2>Pseudo : </h2>
+              <input id="nickname" type="text" />
+            </div>
+            <p class="button"><button id="playGame" class="btn btn-white btn-animate">Accepter la mission</button></p>
+          </td>
         </tr>
       </table>
   	</div>
@@ -101,10 +107,37 @@
   	</div>
 
     <div style="display : none" id="endMenu">
-      <div class="greenbox">
-       <h2>Mission échouée</h2>
-       <p id="endText"></p>
-      </div>
+      <table>
+        <tr>
+          <td>
+            <div class="greenbox">
+             <h2 class="typeEnd">Mission échouée</h2>
+             <p id="endText"></p>
+            </div>
+          </td>
+          <td rowspan="2">
+            <div id="top10Score" class="greenbox">
+              <h2>Top 10 Score</h2>
+              <ol>
+              </ol>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="greenbox">
+              <h2>Crédits</h2>
+              <ul id="top10Score">
+               <li>Michel Buffa - Organisateur du concours 2019/2020</li>
+               <li>Sébastien Vandenberghe - Principal développeur de BabylonJS</li>
+               <li>Camélia Zarzitski - Développeuse</li>
+               <li>Alex Zarzitski - Dévloppeur</li>
+               <li>Swabahadine Abdallah - Dévloppeur</li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
       <p class="button"><button id="replayGame" class="btn btn-white btn-animate">Retenter</button></p>
   	</div>
 

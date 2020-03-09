@@ -24,7 +24,7 @@ var initPlayerCamera = function (scene, cible) {
 	camera.maxCameraSpeed = 10
 */
 	// This attaches the camera to the canvas
-	console.log('canvas', canvas)
+	//console.log('canvas', canvas)
 	camera.attachControl(canvas, true);
 	return camera;
 }

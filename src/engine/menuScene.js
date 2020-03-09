@@ -22,12 +22,9 @@ var startMenuScene = function () {
 	skyboxMaterial.diffuseTexture = new BABYLON.Texture("resources/textures/skybox/skybox_py.jpg", scene);
 	skybox.material = skyboxMaterial;
 
-	// music
-	musicMenu = new BABYLON.Sound("musicMenu", "resources/music/chevauchee-des-walkyries.mp3", scene, null, {
-		loop: true,
-		autoplay: true
-	});
-	musicMenu.setVolume(0.1);
+	// music (timer de 1 seconde pour éviter le bug des musiques superposées)
+	setTimeout(function(){ initMusic(scene);}, 1000);
+	
 	rotationBallon(camera, scene);  //scene.debugLayer.show();
 
 	return scene;
@@ -41,4 +38,12 @@ var rotationBallon = async function (camera, scene) {
 	scene.registerAfterRender(function () {
     sphere.rotate(axis, 0.01, BABYLON.Space.WORLD);
   });
+}
+
+var initMusic = function(scene){
+	musicMenu = new BABYLON.Sound("musicMenu", "resources/music/chevauchee-des-walkyries.mp3", scene, null, {
+		loop: true,
+		autoplay: true
+	});
+	musicMenu.setVolume(0.1);
 }

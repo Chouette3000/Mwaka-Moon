@@ -8,7 +8,7 @@ class Univers {
     this.initSkybox();
     await this.initGround();
     initOnGround(ball,  this.ground);
-	
+
   }
 
   initLight(){
@@ -17,7 +17,7 @@ class Univers {
   }
 
   initSkybox(){
-    this.skybox = BABYLON.Mesh.CreateBox("skyBox", 14000.0, this.scene);
+    this.skybox = BABYLON.Mesh.CreateBox("skyBox", 10000.0, this.scene);
     var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", this.scene);
     skyboxMaterial.backFaceCulling = false;
     skyboxMaterial.disableLighting = true;
