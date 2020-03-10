@@ -20,7 +20,7 @@ Dans certains cas, le personnage change d'avis quant à ce lieu où il faut êtr
  
 - Plusieurs niveaux de difficulté
 - Plateformes diversifiées
-- Animations
+- Animations et musiques
 - Plusieurs fins possibles 
 - Top 10 des meilleurs scores tous joueurs confondus  
 - Joli ballon 
