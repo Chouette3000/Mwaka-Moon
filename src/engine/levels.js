@@ -2,10 +2,6 @@ var endBoom = false;
 var thisLevels = null;
 var nickname = "Anonyme";
 
-if (typeof localStorage.scoreTop == 'undefined') {
-  localStorage.scoreTop = JSON.stringify([]);
-}
-
 class Levels {
   constructor(scene, playerCamera, ball, levelSizeX, levelSizeZ, bottomIndex) {
     thisLevels = this;
@@ -91,36 +87,30 @@ class Levels {
     this.levelsArray.length;
   }
   setNewScore(){
-    let scoresTop = JSON.parse(localStorage.scoreTop);
-
     let nicknametmp = $("#tutoMenu #nickname").val();
     if(nicknametmp != "")
       nickname = nicknametmp;
 
-    scoresTop.push(thisLevels.chrono.show2() + " - " + nickname);
-    scoresTop.sort();
+    $.get( "https://mwaka-moon-statserver.herokuapp.com/set?pseudo="
+    + nickname.replace(/ /g, "%20").replace(/\?/g, "-").replace(/&/g, "-")
+    + "&scoreChrono=" + thisLevels.chrono.show2(), function( data ) {
+    });
 
-    let newScoresTop = [];
-    for (var i = 0; (i < scoresTop.length && i < 10); i++) {
-      newScoresTop.push(scoresTop[i]);
-    }
-
-    localStorage.scoreTop = JSON.stringify(newScoresTop);
   }
   showScores(){
-    let scoresTop = JSON.parse(localStorage.scoreTop);
-    scoresTop.sort();
-    $( "#endMenu #top10Score ol").last().html("");
-    for (var i = 0; (i < scoresTop.length && i < 10); i++) {
-      $("#endMenu #top10Score ol").append('<li>'+scoresTop[i]+'</li>');
-    }
+    $.get( "https://mwaka-moon-statserver.herokuapp.com/", function( scoresTop ) {
+      $( "#endMenu #top10Score ol").last().html("");
+      for (var i = 0; (i < scoresTop.length && i < 10); i++) {
+        $("#endMenu #top10Score ol").append('<li>'+scoresTop[i]+'</li>');
+      }
+    });
   }
 
   endSuccessLaunch(){
 	  var endMenu = new EndMenu();
 	  endMenu.playEnd("endSuccess");
       thisLevels.setNewScore();
-      thisLevels.showScores();
+      setTimeout(thisLevels.showScores, 200);
       $( "#endMenu .greenbox .typeEnd" ).last().html($( "#endMenu .greenbox .typeEnd" ).last().text() + " - Mon Score: " + thisLevels.chrono.show());
   }
 

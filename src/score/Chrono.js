@@ -29,12 +29,12 @@ class Chrono {
     }
 
     show(){
-        return this.getMin()  + " min " +  this.getSeconds() + " sec " +  this.getMs() + " ms "
+        return this.getMin()  + " min " +  (this.getSeconds() % 60) + " sec " +  this.getMs() + " ms "
     }
 
     show2(){
       let min = this.getMin().toString();
-      let sec = this.getSeconds().toString();
+      let sec = (this.getSeconds() % 60).toString();
       let ms = this.getMs().toString();
       if ( sec.length < 2 )
         sec = "0" + sec;
@@ -42,8 +42,8 @@ class Chrono {
         ms = "00" + ms;
       else if(ms.length < 2)
         ms = "0" + ms;
-      if ( min.length < 4 ){
-        for (var i = min.length; i < 4; i++)
+      if ( min.length < 2 ){
+        for (var i = min.length; i < 2; i++)
           min = "0" + min;
       }
 
