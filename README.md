@@ -4,7 +4,7 @@ Mwaka-Moon est un jeu de plateforme dans lequel vous porterez main forte à un b
 
 Lien du jeu : https://mystifying-feynman-8de0f3.netlify.com/
 
-## Membre du groupe 
+## Membres du groupe 
 
 - Camélia Benhmida Zarzitski
 - Alex Zarzitski
@@ -13,6 +13,7 @@ Lien du jeu : https://mystifying-feynman-8de0f3.netlify.com/
 ## Lien avec le thème
 
 "The place to be" se trouve être la Terre où notre ballon souhaite à tout prix retourner
+
 Dans certains cas, le personnage change d'avis quant à ce lieu où il faut être
 
 ## Points forts
