@@ -29,7 +29,7 @@ Dans certains cas, le personnage change d'avis quant à ce lieu où il faut êtr
 
 L'idée initiale d'un ballon sur la Lune vient de notre passionné de l'Espace. On a tenté de reproduire 
 un univers au plus près de la réalité (par exemple, il est impossible de voir la Terre et le Soleil en 
-même temps depuis la Lune, donc on ne voit que l'un des 2, il s'agit bien sûr de la planète que l'on souhaite atteindre) 
+même temps depuis la Lune, donc on ne voit que l'un des 2, il s'agit bien sûr de la planète que l'on souhaite atteindre  : The place to be !) 
 
 Les idées concernant le gameplay ont beaucoup évolué au fil du temps et des essais donc le jeu final est bien différent de celui
 imaginé au départ mais tout aussi plaisant :) 
