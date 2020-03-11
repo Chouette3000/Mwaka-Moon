@@ -13,13 +13,14 @@ Lien du jeu : https://mystifying-feynman-8de0f3.netlify.com/
 ## Lien avec le thème
 
 "The place to be" se trouve être la Terre où notre ballon souhaite à tout prix retourner
+
 Dans certains cas, le personnage change d'avis quant à ce lieu où il faut être
 
 ## Points forts
  
 - Plusieurs niveaux de difficulté
 - Plateformes diversifiées
-- Animations
+- Animations et musiques
 - Plusieurs fins possibles 
 - Top 10 des meilleurs scores tous joueurs confondus  
 - Joli ballon 
@@ -28,7 +29,7 @@ Dans certains cas, le personnage change d'avis quant à ce lieu où il faut êtr
 
 L'idée initiale d'un ballon sur la Lune vient de notre passionné de l'Espace. On a tenté de reproduire 
 un univers au plus près de la réalité (par exemple, il est impossible de voir la Terre et le Soleil en 
-même temps depuis la Lune, donc on ne voit que l'un des 2, il s'agit bien sûr de la planète que l'on souhaite atteindre) 
+même temps depuis la Lune, donc on ne voit que l'un des 2, il s'agit bien sûr de la planète que l'on souhaite atteindre  : The place to be !) 
 
 Les idées concernant le gameplay ont beaucoup évolué au fil du temps et des essais donc le jeu final est bien différent de celui
 imaginé au départ mais tout aussi plaisant :) 
