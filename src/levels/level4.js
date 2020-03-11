@@ -8,17 +8,17 @@ class Level4 extends Level{
 	initLevel(){
 		var pos = this.positionInitLvl;
 		var ecartXZ = this.plateSize+4;
-		this.nbPlats = 4;
 		var ecartY = 4;
 		var index = 0;
 		var pos2 = pos;
 		var pos3 = pos;
+		var sizeSmall = (difficulty > 1) ? this.getWidth("extra-small") : this.getWidth("small");
 		while(pos.y < (this.positionFinLvl.y-ecartY)){
 			pos = new BABYLON.Vector3(pos.x + ecartXZ, pos.y + ecartY, pos.z + ecartXZ);
 			if(this.positionFinLvl.x < pos.x || this.positionFinLvl.y < pos.y || this.positionFinLvl.z < pos.z)
 				break;
 			// la vraie plateforme
-			this.plateforms.push(new Plateforme(this.scene, this.getWidth("extra-small"), new BABYLON.Vector3(pos.x, pos.y, pos.z), "normal", this.spherePivot));
+			this.plateforms.push(new Plateforme(this.scene, sizeSmall, new BABYLON.Vector3(pos.x, pos.y, pos.z), "normal", this.spherePivot));
 			if(index > 0)
 				this.setFallingPlateform(this.plateforms[this.plateforms.length-1]);
 			index++;	

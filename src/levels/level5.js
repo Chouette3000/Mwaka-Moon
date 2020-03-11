@@ -11,7 +11,7 @@ class Level5 extends Level{
 		var ecartY = 4;
 		var ecartZ = this.plateSize + 5;
 		var typeDef = "normal";
-
+		var finalPlatSize = (difficulty > 1) ? this.getWidth("small") : this.plateSize; 
 		
 		pos = new BABYLON.Vector3(pos.x + ecartX, pos.y + ecartY, pos.z + ecartX);
 		this.plateforms.push(new Plateforme(this.scene, this.plateSize, new BABYLON.Vector3(pos.x, pos.y, pos.z), typeDef, this.spherePivot));
@@ -66,7 +66,8 @@ class Level5 extends Level{
 			pos = new BABYLON.Vector3(pos.x, pos.y + 1, pos.z-ecartZ);
 			this.plateforms.push(new Plateforme(this.scene, this.plateSize, new BABYLON.Vector3(pos.x, pos.y, pos.z), typeDef, this.spherePivot));
 		}
-		this.setMovingAnimation(this.plateforms[this.plateforms.length-2], "Y");
+		if(difficulty > 1)
+			this.setMovingAnimation(this.plateforms[this.plateforms.length-2], "Y");
 		this.setFallingPlateform(this.plateforms[this.plateforms.length-1]);
 		// tuile enflammée
 		var posTmp = new BABYLON.Vector3(pos.x, pos.y + 1, pos.z-ecartZ);
@@ -76,7 +77,8 @@ class Level5 extends Level{
 		for(var i = 0; i < 2; i++){
 			pos = new BABYLON.Vector3(pos.x+ecartX, pos.y + 2, pos.z);
 			this.plateforms.push(new Plateforme(this.scene, this.plateSize, new BABYLON.Vector3(pos.x, pos.y, pos.z), typeDef, this.spherePivot));
-			this.setMovingAnimation(this.plateforms[this.plateforms.length-1], "Z");
+			if(difficulty > 1)
+				this.setMovingAnimation(this.plateforms[this.plateforms.length-1], "Z");
 		}
 		for(var i = 0; i < 2; i++){
 			pos = new BABYLON.Vector3(pos.x, pos.y + 2, pos.z+ecartZ);
@@ -85,7 +87,11 @@ class Level5 extends Level{
 		this.setMovingAnimation(this.plateforms[this.plateforms.length-1], "Z");
 		// dernière plateforme du parcours
 		pos = new BABYLON.Vector3(pos.x-(this.plateSize+1), pos.y + 1, pos.z+(this.plateSize+1));
-		this.plateforms.push(new Plateforme(this.scene, this.getWidth("small"), new BABYLON.Vector3(pos.x, pos.y, pos.z), typeDef, this.spherePivot));
-		
+		this.plateforms.push(new Plateforme(this.scene, finalPlatSize, new BABYLON.Vector3(pos.x, pos.y, pos.z), typeDef, this.spherePivot));
+		if(difficulty == 1){
+			pos = this.borderPlateforms[1].boxPlateforme.position;
+			pos = new BABYLON.Vector3(pos.x - 3, pos.y - 3, pos.z - ecartZ);	
+			this.plateforms.push(new Plateforme(this.scene, finalPlatSize, new BABYLON.Vector3(pos.x, pos.y, pos.z), typeDef, this.spherePivot));
+		}
 	}
 }
