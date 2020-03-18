@@ -4,6 +4,8 @@ Mwaka-Moon est un jeu de plateforme dans lequel vous porterez main forte à un b
 
 Lien du jeu : https://mystifying-feynman-8de0f3.netlify.com/
 
+Lien vers la vidéo de présentation : https://www.youtube.com/watch?v=f14_HnjLbTs
+
 ## Membres du groupe 
 
 - Camélia Benhmida Zarzitski
